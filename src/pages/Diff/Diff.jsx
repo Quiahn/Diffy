@@ -1,33 +1,34 @@
 import { EditorComponent } from "../../components/EditorComponent";
 import { useState } from "preact/hooks";
+import "./Diff.css";
 
 export function Diff() {
     const [defaultLanguage, setDefaultLanguage] = useState("");
     const [defaultValue, setDefaultValue] = useState("");
 
     const dropDownOptions = {
-        "TypeScript": "//",
         "JavaScript": "//",
-        "CSS": "//",
-        "LESS": "//",
+        "TypeScript": "//",
+        "CSS": "/*",
+        "LESS": "/*",
         "SCSS": "//",
-        "JSON": "//",
-        "HTML": "//",
-        "XML": "//",
+        "JSON": "",
+        "HTML": "<!--",
+        "XML": "<!--",
         "PHP": "//",
         "C#": "//",
         "C++": "//",
         "Razor": "//",
-        "Markdown": "//",
+        "Markdown": "<!--",
         "Java": "//",
-        "VB": "//",
-        "CoffeeScript": "//",
-        "Handlebars": "//",
-        "Batch": "//",
+        "VB": "'",
+        "CoffeeScript": "#",
+        "Handlebars": "<!--",
+        "Batch": "REM",
         "Pug": "//",
         "F#": "//",
         "Lua": "--",
-        "Powershell": "//",
+        "Powershell": "#",
         "Python": "#",
         "Ruby": "#",
         "SASS": "//",
@@ -55,7 +56,7 @@ export function Diff() {
                 ))}
             </select>
 
-            {defaultLanguage && defaultValue &&
+            {defaultLanguage && defaultValue && <>
                 <div id="editor-container">
                     <EditorComponent
                         defaultLanguage = {defaultLanguage}
@@ -65,7 +66,11 @@ export function Diff() {
                         defaultLanguage = {defaultLanguage}
                         defaultValue = {defaultValue + " Modified"}
                     />
-                </div>}
+                </div>
+
+                <input type="button" value="Clear" />
+                <input type="button" value="Check Differences!" />
+            </>}
         </div>
 	);
 }

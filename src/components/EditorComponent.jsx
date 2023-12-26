@@ -16,7 +16,6 @@ export function EditorComponent(props) {
     }
 
     return (
-        <div>
             <Editor
                 width = "100%"
                 height = "100%"
@@ -24,7 +23,5 @@ export function EditorComponent(props) {
                 defaultValue = {props.defaultValue}
                 onMount = {handleEditorDidMount}
             />
-            <button onClick={showValue}>Show value</button>
-        </div>
     );
 }
