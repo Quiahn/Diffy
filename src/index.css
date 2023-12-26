@@ -23,14 +23,31 @@ body {
 	min-height: 100vh;
 }
 
-header {
+header div.header-title {
 	display: flex;
-	justify-content: flex-end;
-	background-color: #673ab8;
+	justify-content: flex-start; /* Aligns the div to the left */
+	margin: 0 1rem;
+	pointer-events: none; /* Makes the div not clickable */
+}
+
+header div.header-title p {
+	font-size: 2rem;
+	font-weight: bold;
+	margin: 0;
+}
+
+header div.header-links {
+	display: flex;
+	justify-content: flex-end; /* Aligns the div to the right */
 }
 
 header nav {
+	width: 100%;
+	height: 50px;
 	display: flex;
+	justify-content: space-between; /* Creates space between the two divs */
+	background-color: #0003;
+	user-select: none; /* Makes the text unselectable */
 }
 
 header a {
@@ -45,15 +62,6 @@ header a.active {
 
 header a:hover {
 	background-color: #0008;
-}
-
-main {
-	flex: auto;
-	display: flex;
-	align-items: center;
-	max-width: 1280px;
-	margin: 0 auto;
-	text-align: center;
 }
 
 @media (max-width: 639px) {

@@ -2,11 +2,12 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
+		"dev": "vite --host",
 		"build": "vite build",
 		"preview": "vite preview --port 5173"
 	},
 	"dependencies": {
+		"@monaco-editor/react": "^4.6.0",
 		"preact": "^10.13.1",
 		"preact-iso": "^2.3.1",
 		"preact-render-to-string": "^6.2.0"
