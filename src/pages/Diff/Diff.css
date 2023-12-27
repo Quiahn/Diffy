@@ -41,7 +41,7 @@ select, input[type="button"]:hover {
 
 #editor-container {
   display: flex;
-  height: 85vh;
+  height: calc(100vh - 163px);
   width: 100vw;
 }
 
