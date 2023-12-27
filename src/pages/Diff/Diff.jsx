@@ -15,7 +15,7 @@ export function Diff() {
         "JSON": "",
         "HTML": "<!--",
         "XML": "<!--",
-        "PHP": "//",
+        "PHP": "<?php #",
         "C#": "//",
         "C++": "//",
         "Razor": "//",
@@ -41,9 +41,14 @@ export function Diff() {
         setDefaultValue(dropDownOptions[e.target.value]);
     }
 
+    const onCheckDifferences = () => {
 
-	return (
+    }
+
+    return (
         <div id="main-container" class={defaultLanguage && defaultValue && "selected"}>
+            <h2>Choose a programming language</h2>
+
             <select
                 value={defaultLanguage}
                 onChange={onLanguageChange}
@@ -59,18 +64,19 @@ export function Diff() {
             {defaultLanguage && defaultValue && <>
                 <div id="editor-container">
                     <EditorComponent
-                        defaultLanguage = {defaultLanguage}
-                        defaultValue = {defaultValue + " Original"}
+                        defaultLanguage={defaultLanguage.toLowerCase()}
+                        defaultValue={defaultValue + " Original"}
                     />
-                    <EditorComponent 
-                        defaultLanguage = {defaultLanguage}
-                        defaultValue = {defaultValue + " Modified"}
+                    <EditorComponent
+                        defaultLanguage={defaultLanguage.toLowerCase()}
+                        defaultValue={defaultValue + " Modified"}
                     />
                 </div>
 
-                <input type="button" value="Clear" />
-                <input type="button" value="Check Differences!" />
+                <div id="button-container">
+                    <input type="button" value="Check Differences!" />
+                </div>
             </>}
         </div>
-	);
+    );
 }

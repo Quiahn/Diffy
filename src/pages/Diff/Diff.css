@@ -1,5 +1,42 @@
-#main-container {
-  text-align: center;
+/* HTML Tag Selectors */
+h2 {
+  position: absolute;
+  top: calc(50vh - 50px);
+  left: calc(50% - 370px/2);
+  margin: 0;
+}
+
+select {
+  background-color: #343a40;
+  color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: calc(50vh - 50px);
+}
+
+input[type="button"] {
+  margin: 10px 5px;
+  background-color: #343a40;
+  color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+select, input[type="button"]:hover {
+  background-color: #23272b;
+  cursor: pointer;
+}
+
+/* ID Selectors */
+#button-container {
+  display: flex;
+  justify-content: end;
 }
 
 #editor-container {
@@ -12,14 +49,16 @@
   margin: 0 5px;
 }
 
-select {
-
+#main-container {
+  min-height: calc(100vh - 50px);
+  text-align: center;
 }
 
+/* Class Selectors */
 .selected select {
-  
+  margin: 10px 0;
 }
 
-input {
-  margin: 5px 0 5px 5px;
+.selected h2 {
+  display: none;
 }
