@@ -43,7 +43,7 @@ export function Diff() {
 
 
 	return (
-        <div>
+        <div id="main-container" class={defaultLanguage && defaultValue && "selected"}>
             <select
                 value={defaultLanguage}
                 onChange={onLanguageChange}

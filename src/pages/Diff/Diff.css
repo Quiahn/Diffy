@@ -1,3 +1,7 @@
+#main-container {
+  text-align: center;
+}
+
 #editor-container {
   display: flex;
   height: 85vh;
@@ -6,6 +10,14 @@
 
 #editor-container section {
   margin: 0 5px;
+}
+
+select {
+
+}
+
+.selected select {
+  
 }
 
 input {
