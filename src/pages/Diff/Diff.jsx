@@ -7,7 +7,8 @@ export function Diff() {
     const [defaultLanguage, setDefaultLanguage] = useState(""),
           [defaultValue, setDefaultValue] = useState(""),
           [currentOriginalValue, setCurrentOriginalValue] = useState(""),
-          [currentModifiedValue, setCurrentModifiedValue] = useState("");
+          [currentModifiedValue, setCurrentModifiedValue] = useState(""),
+          [showDiff, setShowDiff] = useState(false);
 
     const dropDownOptions = {
         "JavaScript": "//",
@@ -45,13 +46,12 @@ export function Diff() {
     }
 
     const onCheckDifferences = () => {
-        setCurrentOriginalValue()
-        setCurrentModifiedValue()
+        setShowDiff(true);
     }
 
     return (
         <div id="main-container" class={defaultLanguage && defaultValue && "selected"}>
-            {!currentOriginalValue && !currentModifiedValue ? <>
+            {!showDiff ? <>
             <h2>Choose a programming language</h2>
 
             <select
@@ -86,11 +86,14 @@ export function Diff() {
             </>}
         </> : <>
             <h2>Differences</h2>
-
-            <DiffComponent
-                originalValue={currentOriginalValue}
-                modifiedValue={currentModifiedValue}
-            />
+            
+            <div id="editor-container">
+                <DiffComponent
+                    language={defaultLanguage.toLowerCase()}
+                    originalValue={currentOriginalValue}
+                    modifiedValue={currentModifiedValue}
+                />
+            </div>
         </>}
         </div>
     );
