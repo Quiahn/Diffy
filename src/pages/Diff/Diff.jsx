@@ -1,10 +1,13 @@
 import { EditorComponent } from "../../components/EditorComponent";
+import { DiffComponent } from "../../components/DiffComponent";
 import { useState } from "preact/hooks";
 import "./Diff.css";
 
 export function Diff() {
-    const [defaultLanguage, setDefaultLanguage] = useState("");
-    const [defaultValue, setDefaultValue] = useState("");
+    const [defaultLanguage, setDefaultLanguage] = useState(""),
+          [defaultValue, setDefaultValue] = useState(""),
+          [currentOriginalValue, setCurrentOriginalValue] = useState(""),
+          [currentModifiedValue, setCurrentModifiedValue] = useState("");
 
     const dropDownOptions = {
         "JavaScript": "//",
@@ -42,11 +45,13 @@ export function Diff() {
     }
 
     const onCheckDifferences = () => {
-
+        setCurrentOriginalValue()
+        setCurrentModifiedValue()
     }
 
     return (
         <div id="main-container" class={defaultLanguage && defaultValue && "selected"}>
+            {!currentOriginalValue && !currentModifiedValue ? <>
             <h2>Choose a programming language</h2>
 
             <select
@@ -66,17 +71,27 @@ export function Diff() {
                     <EditorComponent
                         defaultLanguage={defaultLanguage.toLowerCase()}
                         defaultValue={defaultValue + " Original"}
+                        setCurrentValue={setCurrentOriginalValue}
                     />
                     <EditorComponent
                         defaultLanguage={defaultLanguage.toLowerCase()}
                         defaultValue={defaultValue + " Modified"}
+                        setCurrentValue={setCurrentModifiedValue}
                     />
                 </div>
 
                 <div id="button-container">
-                    <input type="button" value="Check Differences!" />
+                    <input type="button" value="Check Differences" onClick={onCheckDifferences} />
                 </div>
             </>}
+        </> : <>
+            <h2>Differences</h2>
+
+            <DiffComponent
+                originalValue={currentOriginalValue}
+                modifiedValue={currentModifiedValue}
+            />
+        </>}
         </div>
     );
 }

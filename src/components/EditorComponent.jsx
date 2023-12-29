@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'preact/hooks';
+import { useRef } from 'preact/hooks';
 import Editor from '@monaco-editor/react';
 
 export function EditorComponent(props) {
@@ -8,6 +8,10 @@ export function EditorComponent(props) {
         editorRef.current = editor;
     }
 
+    const onChange = (newValue, e) => {
+        // props.setCurrentValue(newValue);
+    }
+
     return (
             <Editor
                 width="100%"
@@ -15,6 +19,7 @@ export function EditorComponent(props) {
                 theme="vs-dark"
                 value={props.defaultValue}
                 language={props.defaultLanguage}
+                onChange={onChange}
             />
     );
 }

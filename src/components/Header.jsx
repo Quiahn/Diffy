@@ -13,8 +13,8 @@ export function Header() {
 					<a href="/" class={url == '/' && 'active'}>
 						Home
 					</a>
-					<a href="/404" class={url == '/404' && 'active'}>
-						404
+					<a href="/diff" class={url == '/diff' && 'active'}>
+						Diff
 					</a>
 				</div>
 			</nav>
