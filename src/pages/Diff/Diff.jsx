@@ -46,6 +46,10 @@ export function Diff() {
     }
 
     const onCheckDifferences = () => {
+        if (!currentOriginalValue && !currentModifiedValue) {
+            setCurrentOriginalValue(defaultValue + " Original");
+            setCurrentModifiedValue(defaultValue + " Modified");
+        }
         setShowDiff(true);
     }
 
