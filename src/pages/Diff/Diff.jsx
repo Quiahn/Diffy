@@ -54,7 +54,7 @@ export function Diff() {
     }
 
     return (
-        <div id="main-container" class={defaultLanguage && defaultValue && "selected"}>
+        <div id="main-container" class={defaultLanguage && defaultValue ? "selected diff" : "diff"}>
             {!showDiff ? <>
             <h2>Choose a programming language</h2>
 

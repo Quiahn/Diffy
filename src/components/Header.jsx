@@ -16,6 +16,9 @@ export function Header() {
 					<a href="/diff" class={url == '/diff' && 'active'}>
 						Diff
 					</a>
+					<a href="/validate" class={url == '/validate' && 'active'}>
+						Validate
+					</a>
 				</div>
 			</nav>
 		</header>

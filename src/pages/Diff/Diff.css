@@ -1,12 +1,12 @@
 /* HTML Tag Selectors */
-h2 {
+.diff h2 {
   position: absolute;
   top: calc(50vh - 50px);
   left: calc(50% - 370px/2);
   margin: 0;
 }
 
-select {
+.diff select {
   background-color: #343a40;
   color: #fff;
   border: 1px solid #ced4da;
@@ -17,7 +17,7 @@ select {
   margin-top: calc(50vh - 50px);
 }
 
-input[type="button"] {
+.diff input[type="button"] {
   margin: 10px 5px;
   background-color: #343a40;
   color: #fff;
@@ -28,24 +28,24 @@ input[type="button"] {
   line-height: 1.5;
 }
 
-select, input[type="button"]:hover {
+.diff select, input[type="button"]:hover {
   background-color: #23272b;
   cursor: pointer;
 }
 
 /* ID Selectors */
-#button-container {
+.diff #button-container {
   display: flex;
   justify-content: end;
 }
 
-#editor-container {
+.diff #editor-container {
   display: flex;
   height: calc(100vh - 163px);
   width: 100vw;
 }
 
-#editor-container section {
+.diff #editor-container section {
   margin: 0 5px;
 }
 
@@ -55,10 +55,10 @@ select, input[type="button"]:hover {
 }
 
 /* Class Selectors */
-.selected select {
+.diff.selected select {
   margin: 10px 0;
 }
 
-.selected h2 {
+.diff.selected h2 {
   display: none;
 }
